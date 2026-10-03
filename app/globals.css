@@ -3,7 +3,7 @@
 :root {
   color-scheme: dark;
 
-  --background: #000;
+  --background: #0f0f0f;
 
   --primary: #fff;
   --primary-60: #999;
@@ -40,6 +40,30 @@
   --text-10xl-fluid: clamp(2.5rem, 0.672rem + 8.125vw, 9rem);
   --text-11xl-fluid: clamp(3rem, -0.516rem + 15.625vw, 15.5rem);
 
+  --text-display: clamp(3rem, 0.75rem + 9vw, 10rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.045em;
+  --text-display--font-weight: 500;
+
+  --text-h1: clamp(2.5rem, 1.25rem + 4.5vw, 6rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h1--font-weight: 500;
+
+  --text-h2: clamp(2rem, 1.2rem + 2.6vw, 4rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.035em;
+  --text-h2--font-weight: 500;
+
+  --text-h3: clamp(1.25rem, 1rem + 0.8vw, 1.875rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
+  --text-h3--font-weight: 500;
+
+  --text-lead: clamp(1.125rem, 1rem + 0.35vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+  --text-lead--letter-spacing: -0.01em;
+
   --container-max: 112.5rem;
   --gutter-x: clamp(1rem, 0.2266rem + 3.438vw, 3.75rem);
   --space-section: clamp(2.5rem, 1.269rem + 5.469vw, 6.875rem);
@@ -66,7 +90,25 @@
   h5,
   h6 {
     color: var(--primary);
-    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    letter-spacing: var(--text-h1--letter-spacing);
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    letter-spacing: var(--text-h2--letter-spacing);
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    letter-spacing: var(--text-h3--letter-spacing);
   }
 
   h1,
