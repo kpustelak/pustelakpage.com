@@ -15,9 +15,9 @@ export default function Showcase() {
     const [active, setActive] = useState(0);
 
     return(
-        <div className="section-container h-screen gap-2">
-            <h2 className="h-1/10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-            <div className="flex h-9/10 gap-2">
+        <div className="section-container h-screen flex flex-col gap-y-10">
+            <h2 className="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+            <div className="flex h-8/10 gap-2">
                 {items.map((item,i) => (
                     <div
                         key={i}
@@ -33,9 +33,9 @@ export default function Showcase() {
                                 className="object-cover object-center"
                             />
                         </div>
-                        <h3>
+                        <p>
                             {item.description}
-                        </h3>
+                        </p>
                     </div>
                 ))}
             </div>
