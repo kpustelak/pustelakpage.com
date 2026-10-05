@@ -1,5 +1,3 @@
-import SkillList from "@/components/about/skill-list";
-import JobDescription from "@/components/about/job-description";
 import {JSX} from "react";
 
 interface SectionTabProps {
@@ -11,7 +9,7 @@ export default function SectionTab({title, children, fullWidth}: SectionTabProps
     return (
             <div className="flex">
                 <div className="w-1/5">
-                    <p>{title}</p>
+                    <p className="uppercase">{title}</p>
                 </div>
                 <div className={`${fullWidth ? "w-4/5" : "w-3/5"} flex flex-col gap-y-10`}>
                     {children}

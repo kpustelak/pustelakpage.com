@@ -3,6 +3,7 @@ import About from "@/components/about/about";
 import Projects from "@/components/projects/projects";
 import Talk from "@/components/talk/talk";
 import Technologies from "@/components/technologies/technologies";
+import SkillStack from "@/components/skillstack/skillstack";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Projects />
         <Talk />
         <Technologies />
+        <SkillStack />
     </>
   );
 }

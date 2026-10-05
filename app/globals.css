@@ -170,6 +170,19 @@
   padding-block: var(--space-section);
 }
 
+@utility section-inset {
+  width: min(100% - (var(--gutter-x) * 2), var(--container-max));
+  margin-inline: auto;
+}
+
+@utility section-bleed {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: max(var(--gutter-x), calc((100% - var(--container-max)) / 2));
+  scroll-padding-left: max(var(--gutter-x), calc((100% - var(--container-max)) / 2));
+  scrollbar-width: none;
+}
+
 @utility label {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.75rem;
