@@ -1,5 +1,6 @@
 import JobDescription from "@/components/about/job-description";
 import SkillList from "@/components/about/skill-list";
+import SectionTab from "@/components/global/section-tab";
 
 const JobList = [
     {name : "Lorem ipsum", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum at tempor tincidunt. In nec ipsum eget nunc bibendum dignissim. Quisque posuere scelerisque neque sit amet elementum. Donec sodales molestie condimentum."},
@@ -9,11 +10,8 @@ const JobList = [
 
 export default function About() {
     return(
-        <div className="section-container flex">
-            <div className="w-1/5">
-                <p>ABOUT</p>
-            </div>
-            <div className="w-3/5 flex flex-col gap-y-10">
+        <div className="section-container ">
+            <SectionTab title={"ABOUT"} fullWidth={false} >
                 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum.</h2>
                 <p className="w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum at tempor tincidunt.
                     In nec ipsum eget nunc bibendum dignissim. Quisque posuere scelerisque neque sit amet elementum.
@@ -25,9 +23,8 @@ export default function About() {
                         <JobDescription name={item.name} description={item.description} key={i} />
                     ))}
                 </div>
-            </div>
+            </SectionTab>
 
         </div>
-
     )
 }

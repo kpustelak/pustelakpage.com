@@ -1,6 +1,8 @@
 import Showcase from "@/components/showcase/showcase";
 import About from "@/components/about/about";
 import Projects from "@/components/projects/projects";
+import Talk from "@/components/talk/talk";
+import Technologies from "@/components/technologies/technologies";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Showcase />
       <About />
       <Projects />
+        <Talk />
+        <Technologies />
     </>
   );
 }
