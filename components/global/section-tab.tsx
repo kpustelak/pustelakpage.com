@@ -1,11 +1,11 @@
-import {JSX} from "react";
+import {JSX, ReactNode} from "react";
 
 interface SectionTabProps {
     title: string;
-    children: React.ReactNode;
+    children: ReactNode;
     fullWidth?: boolean;
 }
-export default function SectionTab({title, children, fullWidth}: SectionTabProps): JSX.Element {
+export default function SectionTab({title, children, fullWidth}: SectionTabProps) {
     return (
             <div className="flex">
                 <div className="w-1/5">

@@ -10,7 +10,7 @@ export default function Talk(){
             <Image src={mock} alt="" className="max-h-screen w-screen overflow-hidden opacity-50"/>
             <div className="absolute max-w-1/2  text-white flex flex-col gap-y-10 font-bold">
                 <h2 className="text-center">Lorem ipsum dolor sit amet</h2>
-                <p className="text-leftss">{loremIpsum}</p>
+                <p className="text-left">{loremIpsum}</p>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import Projects from "@/components/projects/projects";
 import Talk from "@/components/talk/talk";
 import Technologies from "@/components/technologies/technologies";
 import SkillStack from "@/components/skillstack/skillstack";
+import Highlist from "@/components/highlist/highlist";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Talk />
         <Technologies />
         <SkillStack />
+        <Highlist />
     </>
   );
 }
