@@ -9,6 +9,8 @@ const technologies = [
     { image: Github, altText: "GitHub" },
     { image: Github, altText: "GitHub" },
     { image: Github, altText: "GitHub" },
+    { image: Github, altText: "GitHub" },
+    { image: Github, altText: "GitHub" },
 ];
 
 export default function Technologies(){

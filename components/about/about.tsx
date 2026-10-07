@@ -10,10 +10,10 @@ const JobList = [
 
 export default function About() {
     return(
-        <div className="section-container ">
-            <SectionTab title={"ABOUT"} fullWidth={false} >
+        <div className="section-container">
+            <SectionTab title={"About"} fullWidth={false} >
                 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum.</h2>
-                <p className="w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum at tempor tincidunt.
+                <p className="w-3/4 text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum at tempor tincidunt.
                     In nec ipsum eget nunc bibendum dignissim. Quisque posuere scelerisque neque sit amet elementum.
                     Donec sodales molestie condimentum.
                 </p>

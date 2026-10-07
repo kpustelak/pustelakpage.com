@@ -16,7 +16,7 @@ export default function Showcase() {
 
     return(
         <div className="section-container h-screen flex flex-col gap-y-10">
-            <h2 className="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
             <div className="flex h-8/10 gap-2">
                 {items.map((item,i) => (
                     <div
@@ -33,7 +33,7 @@ export default function Showcase() {
                                 className="object-cover object-center"
                             />
                         </div>
-                        <p>
+                        <p className="label">
                             {item.description}
                         </p>
                     </div>

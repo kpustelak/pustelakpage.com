@@ -11,6 +11,7 @@
   --primary-30: #4c4c4c;
   --primary-20: #333;
   --primary-15: #262626;
+  --surface: #0f0f0f;
 
   --accent: #519872;
   --warning: #bf2e2e;
@@ -25,6 +26,7 @@
   --color-primary-30: var(--primary-30);
   --color-primary-20: var(--primary-20);
   --color-primary-15: var(--primary-15);
+  --color-surface: var(--surface);
 
   --color-accent: var(--accent);
   --color-warning: var(--warning);
