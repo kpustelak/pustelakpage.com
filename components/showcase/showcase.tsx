@@ -30,7 +30,7 @@ export default function Showcase() {
                                 src={item.src}
                                 alt={item.alt}
                                 fill
-                                className="object-cover object-center"
+                                className="object-cover"
                             />
                         </div>
                         <p className="label">

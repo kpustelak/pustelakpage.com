@@ -2,7 +2,7 @@
 
 import random from "@/public/random.jpg"
 import mock from "@/public/showcase/mock.jpg"
-import {ReactNode, useState} from "react"
+import {useState} from "react"
 import Image, {StaticImageData} from "next/image"
 
 const projects = [
@@ -28,7 +28,7 @@ export default function Projects() {
             {pos && (
                 <Image
                     src={hoverImage}
-                    sizes="w-80"
+                    sizes="20rem"
                     alt=""
                     className="pointer-events-none fixed z-50 w-80"
                     style={{ left: pos.x + 24, top: pos.y + 24 }}
@@ -39,9 +39,8 @@ export default function Projects() {
                     <li key={`${project.name}-${i}`}>
                         <a
                             href={project.link}
-                            className="group relative isolate flex justify-between px-0 text-h2 leading-none uppercase
+                            className="group relative isolate flex justify-between px-0 font-serif text-h2 leading-none uppercase
                              text-primary transition-[padding,color] duration-300 hover:px-8 hover:text-background"
-                            style={{ cursor: `url(${random}), auto` }}
                             onMouseMove={(e) =>
                                 followingImage(e.clientX, e.clientY,project.image)}
                             onMouseLeave={() => {setPos(null)}}

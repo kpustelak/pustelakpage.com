@@ -8,59 +8,35 @@
   --primary: #fff;
   --primary-60: #999;
   --primary-40: #666;
-  --primary-30: #4c4c4c;
   --primary-20: #333;
-  --primary-15: #262626;
   --surface: #0f0f0f;
-
-  --accent: #519872;
-  --warning: #bf2e2e;
 }
 
 @theme inline {
   --color-background: var(--background);
 
   --color-primary: var(--primary);
-  --color-primary-60: var(--primary-60);
-  --color-primary-40: var(--primary-40);
-  --color-primary-30: var(--primary-30);
   --color-primary-20: var(--primary-20);
-  --color-primary-15: var(--primary-15);
   --color-surface: var(--surface);
-
-  --color-accent: var(--accent);
-  --color-warning: var(--warning);
 
   --font-sans: var(--font-geist);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-instrument-serif);
 
-  --text-2-5xl: 2.5rem;
-  --text-10xl: 9rem;
-  --text-11xl: 15.5rem;
-
-  --text-10xl-fluid: clamp(2.5rem, 0.672rem + 8.125vw, 9rem);
-  --text-11xl-fluid: clamp(3rem, -0.516rem + 15.625vw, 15.5rem);
-
-  --text-display: clamp(3rem, 0.75rem + 9vw, 10rem);
-  --text-display--line-height: 0.92;
-  --text-display--letter-spacing: -0.045em;
-  --text-display--font-weight: 500;
-
   --text-h1: clamp(2.5rem, 1.25rem + 4.5vw, 6rem);
-  --text-h1--line-height: 0.98;
-  --text-h1--letter-spacing: -0.04em;
-  --text-h1--font-weight: 500;
+  --text-h1--line-height: 0.95;
+  --text-h1--letter-spacing: -0.01em;
+  --text-h1--font-weight: 400;
 
   --text-h2: clamp(2rem, 1.2rem + 2.6vw, 4rem);
-  --text-h2--line-height: 1.05;
-  --text-h2--letter-spacing: -0.035em;
-  --text-h2--font-weight: 500;
+  --text-h2--line-height: 0.95;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 400;
 
   --text-h3: clamp(1.25rem, 1rem + 0.8vw, 1.875rem);
-  --text-h3--line-height: 1.2;
-  --text-h3--letter-spacing: -0.02em;
-  --text-h3--font-weight: 500;
+  --text-h3--line-height: 1.05;
+  --text-h3--letter-spacing: 0;
+  --text-h3--font-weight: 400;
 
   --text-lead: clamp(1.125rem, 1rem + 0.35vw, 1.375rem);
   --text-lead--line-height: 1.5;
@@ -78,7 +54,6 @@
   }
 
   body {
-    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
     font-size: 1rem;
     color: var(--primary-60);
     -webkit-font-smoothing: antialiased;
@@ -93,6 +68,15 @@
   h6 {
     color: var(--primary);
     font-weight: 500;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-wrap: balance;
   }
 
   h1 {
@@ -111,12 +95,6 @@
     font-size: var(--text-h3);
     line-height: var(--text-h3--line-height);
     letter-spacing: var(--text-h3--letter-spacing);
-  }
-
-  h1,
-  h2,
-  h3 {
-    text-wrap: balance;
   }
 
   ::selection {
@@ -148,45 +126,20 @@
   }
 }
 
-@utility text-outline {
-  color: var(--background);
-  -webkit-text-stroke: 1px var(--primary);
-}
-
-@utility bg-noise {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch' result='noise'/><feComponentTransfer in='noise'><feFuncA type='linear' slope='2.2' intercept='-0.6'/></feComponentTransfer></filter><rect width='100%25' height='100%25' fill='%23c8c8c8' filter='url(%23n)'/></svg>");
-    opacity: 0.15;
-  }
-}
-
 @utility section-container {
   width: min(100% - (var(--gutter-x) * 2), var(--container-max));
   margin-inline: auto;
   padding-block: var(--space-section);
 }
 
-@utility section-inset {
-  width: min(100% - (var(--gutter-x) * 2), var(--container-max));
-  margin-inline: auto;
-}
-
 @utility section-bleed {
   width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
   padding-left: max(var(--gutter-x), calc((100% - var(--container-max)) / 2));
-  scroll-padding-left: max(var(--gutter-x), calc((100% - var(--container-max)) / 2));
-  scrollbar-width: none;
 }
 
 @utility label {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
