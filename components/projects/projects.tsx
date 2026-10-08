@@ -1,19 +1,11 @@
 'use client'
 
-import random from "@/public/random.jpg"
 import mock from "@/public/showcase/mock.jpg"
 import {useState} from "react"
 import Image, {StaticImageData} from "next/image"
+import {projects} from "@/lib/project-list";
 
-const projects = [
-    { name: "Lorem ipsum", link: "#", image: random },
-    { name: "Lorem ipsum sit amet", link: "#", image: mock  },
-    { name: "Lorem ipsum hola", link: "#", image: random  },
-    { name: "Lorem zibzibum", link: "#", image: mock  },
-    { name: "Lorem ipsum dolor", link: "#", image: random  },
-    { name: "Lorem ipsum sit amet consectetur", link: "#", image: random  },
-];
-
+const projectList = projects
 export default function Projects() {
     const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
     const [hoverImage, setHoverImage] = useState<StaticImageData>(mock);
@@ -35,7 +27,8 @@ export default function Projects() {
                 />
             )}
             <ul className="section-container">
-                {projects.map((project, i) => (
+                <h2>Project list</h2>
+                {projectList.map((project, i) => (
                     <li key={`${project.name}-${i}`}>
                         <a
                             href={project.link}
@@ -47,7 +40,11 @@ export default function Projects() {
                         >
                             <span className="absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                             <span>{project.name}</span>
-                            <span className="tabular-nums">[ {i + 1} ]</span>
+                            <div className="flex justify-between w-1/20">
+                                <p>[</p>
+                                <p>{i + 1}</p>
+                                <p>]</p>
+                            </div>
                         </a>
                     </li>
                 ))}
