@@ -1,11 +1,11 @@
 import type { StaticImageData } from "next/image";
 
-import horsemen from "@/public/wide-images/horsemen.jpg";
-import angel from "@/public/wide-images/angel.jpg";
-import heaven from "@/public/wide-images/heaven.jpg";
-import river from "@/public/wide-images/river.jpg";
-import ship from "@/public/wide-images/ship.jpg";
-import ocean from "@/public/wide-images/ocean.jpg";
+import horsemen from "@/public/wide-images/horsemen.webp";
+import angel from "@/public/wide-images/angel.webp";
+import heaven from "@/public/wide-images/heaven.webp";
+import river from "@/public/wide-images/river.webp";
+import ship from "@/public/wide-images/ship.webp";
+import ocean from "@/public/wide-images/ocean.webp";
 
 import first from "@/public/high-images/1.jpg";
 import second from "@/public/high-images/2.jpg";

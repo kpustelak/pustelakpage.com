@@ -30,21 +30,31 @@ export default function SkillStack(){
     }, [])
 
     return (
-        <div>
+        <div className="relative">
             <div className="section-bleed py-(--space-section)">
                 <SectionTab title={"Skill list"} fullWidth={true} >
                     <h2>Who actually am I</h2>
                     <div ref={track} className="flex gap-4"
-                         style={{ transform: `translateX(-${currentSlide * step}px)`, transition: "transform 300ms ease" }}>
+                    >
                         {skills.map((skill, i) => (
-                            <article
-                                key={`${skill.title}-${i}`}
-                                onClick={() => setSelected(i)}
-                                className="relative aspect-3/4 w-3/10 shrink-0 cursor-pointer isolate"
-                            >
-                                <Image src={skill.image} alt="" fill className="object-cover hover:p-10 bg-white duration-300" />
-                                <h3 className="absolute text-7xl inset-x-0 bottom-15 text-center text-black">{skill.title}</h3>
-                            </article>
+                            <>
+                                <article
+                                    key={`${skill.title}-${i}`}
+                                    onClick={() => setSelected(i)}
+                                    style={{ transform: `translateX(-${currentSlide * step}px)`, transition: "transform 300ms ease" }}
+                                    className="relative aspect-3/4 w-3/10 shrink-0 cursor-pointer isolate"
+                                >
+                                    <Image src={skill.image} alt="" fill className="object-cover hover:p-10 bg-white duration-300 " />
+                                    <h3 className="absolute text-7xl inset-x-0 bottom-15 text-center text-black">{skill.title}</h3>
+                                </article>
+                                <SkillDescription
+                                    title={ skill.title }
+                                    description={ skill.description }
+                                    cover={ skill.cover }
+                                    onClose={() => setSelected(null)}
+                                    isVisible={ selected === i }
+                                />
+                            </>
                         ))}
                     </div>
                     <div className="gap-x-2 flex">
@@ -53,12 +63,8 @@ export default function SkillStack(){
                     </div>
                 </SectionTab>
             </div>
-            {selected !== null && (
-                <SkillDescription
-                    {...skills[selected]}
-                    onClose={() => setSelected(null)}
-                />
-            )}
+
+            )
         </div>
     )
 }
