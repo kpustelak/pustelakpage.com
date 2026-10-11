@@ -8,7 +8,7 @@ const aboutDescription = about
 export default function About() {
     return(
         <PinReveal>
-            <div className="section-container">
+            <div id="about" className="section-container">
                 <SectionTab title={"About"} fullWidth={false} >
                     <h2>{aboutDescription.title}</h2>
                     <p className="w-3/4 text-lead">{aboutDescription.description}</p>

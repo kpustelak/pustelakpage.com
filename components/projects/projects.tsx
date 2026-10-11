@@ -16,7 +16,7 @@ export default function Projects() {
     }
 
     return (
-        <section className="overflow-x-clip">
+        <section id="projects" className="overflow-x-clip">
             {pos && (
                 <Image
                     src={hoverImage}

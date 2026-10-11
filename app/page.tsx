@@ -4,10 +4,12 @@ import Projects from "@/components/projects/projects";
 import Talk from "@/components/talk/talk";
 import Technologies from "@/components/technologies/technologies";
 import SkillStack from "@/components/skillstack/skillstack";
+import Header from "@/components/global/header";
 
 export default function Home() {
   return (
     <>
+        <Header />
         <Showcase />
         <About />
         <SkillStack />
