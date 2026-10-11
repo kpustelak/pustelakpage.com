@@ -136,6 +136,7 @@
   width: 100%;
   overflow: hidden;
   padding-left: max(var(--gutter-x), calc((100% - var(--container-max)) / 2));
+  margin-top: var(--space-section);
 }
 
 @utility label {
