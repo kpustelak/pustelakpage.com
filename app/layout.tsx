@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GeistFont, GeistMonoFont, InstrumentSerifFont } from "@/lib/fonts";
+import SmoothScroll from "@/components/global/smooth-scroll";
 
 export const metadata: Metadata = {
   title: "Kornel Pustelak",
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${GeistFont.variable} ${GeistMonoFont.variable} ${InstrumentSerifFont.variable} h-full bg-background`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

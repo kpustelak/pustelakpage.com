@@ -9,7 +9,7 @@ export default function JobDescription({ name, description }: jobDescription) {
         <div className="flex flex-col gap-y-5">
             <p className="font-medium uppercase text-primary">{name}</p>
             <hr className="border-primary-20" />
-            <p>
+            <p className="job-text overflow-hidden">
                 {description}
             </p>
         </div>
