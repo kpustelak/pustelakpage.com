@@ -5,10 +5,13 @@ import Talk from "@/components/talk/talk";
 import Technologies from "@/components/technologies/technologies";
 import SkillStack from "@/components/skillstack/skillstack";
 import Header from "@/components/global/header";
+import Hero from "@/components/hero/hero";
+import Contact from "@/components/contact/contact";
 
 export default function Home() {
   return (
     <>
+        <Hero />
         <Header />
         <Showcase />
         <About />
@@ -16,6 +19,7 @@ export default function Home() {
         <Projects />
         <Talk />
         <Technologies />
+        <Contact />
     </>
   );
 }

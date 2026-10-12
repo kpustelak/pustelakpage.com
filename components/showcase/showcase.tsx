@@ -1,7 +1,6 @@
 'use client'
 
 import mock from "@/public/showcase/mock.jpg";
-import ocean from "@/public/wide-images/ocean.jpg";
 import Image from "next/image";
 import {useState} from "react";
 const items = [
@@ -15,14 +14,7 @@ export default function Showcase() {
     const [active, setActive] = useState(0);
 
     return(
-        <div>
-        <section className="relative h-screen overflow-hidden">
-            <Image src={ocean} alt="" fill className="object-cover" />
-            <div className="section-container relative z-10">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-            </div>
-        </section>
-        <div className="section-container flex flex-col gap-y-10">
+        <div className="section-container flex flex-col gap-y-10 !pt-0">
             <div className="flex h-[80vh] gap-2">
                 {items.map((item,i) => (
                     <div
@@ -45,7 +37,6 @@ export default function Showcase() {
                     </div>
                 ))}
             </div>
-        </div>
         </div>
     )
 }
