@@ -30,11 +30,5 @@ export const about : AboutDescription = {
                 "tincidunt. In nec ipsum eget nunc bibendum dignissim. Quisque posuere scelerisque neque sit amet " +
                 "elementum. Donec sodales molestie condimentum."
         },
-        {
-            name : "Lorem ipsum",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum at tempor " +
-                "tincidunt. In nec ipsum eget nunc bibendum dignissim. Quisque posuere scelerisque neque sit amet " +
-                "elementum. Donec sodales molestie condimentum."
-        },
     ]
 }
