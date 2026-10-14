@@ -7,9 +7,8 @@ interface GridSquareProps {
 
 export default function GridSquare({image, altText}: GridSquareProps) {
     return(
-        <div className="flex aspect-square items-center justify-center px-18 bg-surface">
-            <Image src={image} alt={altText} className="size-50" />
+        <div className="flex aspect-square items-center justify-center bg-surface p-[18%]">
+            <Image src={image} alt={altText} className="h-auto w-full max-w-50" />
         </div>
-
     )
 }

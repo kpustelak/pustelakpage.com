@@ -4,22 +4,21 @@ import SectionTab from "@/components/global/section-tab";
 import PinReveal from "@/components/about/pin-reveal";
 import {about} from "@/lib/about-description";
 
-const aboutDescription = about
 export default function About() {
     return(
         <PinReveal>
-            <div id="about" className="section-container">
+            <section id="about" className="section-container">
                 <SectionTab title={"About"} fullWidth={false} >
-                    <h2>{aboutDescription.title}</h2>
-                    <p className="w-3/4 text-lead">{aboutDescription.description}</p>
-                    <SkillList names={aboutDescription.skillList} />
+                    <h2>{about.title}</h2>
+                    <p className="text-lead md:w-3/4">{about.description}</p>
+                    <SkillList names={about.skillList} />
                     <div className="flex flex-col gap-y-10">
-                        {aboutDescription.jobList.map((item, i) => (
+                        {about.jobList.map((item, i) => (
                             <JobDescription name={item.name} description={item.description} key={i} />
                         ))}
                     </div>
                 </SectionTab>
-            </div>
+            </section>
         </PinReveal>
     )
 }

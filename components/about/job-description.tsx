@@ -1,10 +1,10 @@
 
-interface jobDescription {
+interface JobDescriptionProps {
     name: string;
     description: string;
 }
 
-export default function JobDescription({ name, description }: jobDescription) {
+export default function JobDescription({ name, description }: JobDescriptionProps) {
     return(
         <div className="flex flex-col gap-y-5">
             <p className="font-medium uppercase text-primary">{name}</p>

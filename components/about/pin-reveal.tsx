@@ -11,18 +11,20 @@ export default function PinReveal({children}: {children: ReactNode}) {
     const ref = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        gsap.from(".job-text", {
-            height: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 1,
-            scrollTrigger:{
-                trigger: ref.current,
-                start: "top top",
-                end: "+=1500",
-                pin: true,
-                scrub: true
-            },
+        const mm = gsap.matchMedia();
+        mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
+            gsap.from(".job-text", {
+                height: 0,
+                duration: 1,
+                stagger: 1,
+                scrollTrigger:{
+                    trigger: ref.current,
+                    start: "top top",
+                    end: "+=1500",
+                    pin: true,
+                    scrub: true
+                },
+            });
         });
     }, {scope: ref});
 

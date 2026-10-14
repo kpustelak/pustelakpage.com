@@ -1,28 +1,25 @@
+import {email, github, linkedin} from "@/lib/contact-details";
+
 const pages = [
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
-    { href: "#privacy", label: "Privacy Policy" },
 ]
-
-const email = "kornel@pustelak.com"
-const github = "https://github.com/kpustelak"
-const linkedin = "https://www.linkedin.com/in/kornel-pustelak-274205284/"
 
 const linkClass = "text-sm text-primary transition-opacity hover:opacity-60"
 
 export default function Footer() {
     return (
-        <footer id="footer" className="relative z-40 flex h-screen flex-col overflow-hidden bg-background px-[var(--gutter-x)] pt-16 md:pt-24">
-            <div className="flex items-start justify-between gap-8">
-                <a href={`mailto:${email}`} className={linkClass}>
+        <footer id="footer" className="relative z-40 flex h-svh flex-col overflow-hidden bg-background px-(--gutter-x) pt-16 md:pt-24">
+            <div className="grid grid-cols-2 items-start gap-8 md:flex md:justify-between">
+                <a href={`mailto:${email}`} className={`${linkClass} break-all`}>
                     {email}
                 </a>
                 <p className="text-sm text-primary">
-                    Copyright
+                    © {new Date().getFullYear()}
                     <br />
-                    2026
+                    Kornel Pustelak
                 </p>
                 <ul className="flex flex-col gap-2">
                     <li>
