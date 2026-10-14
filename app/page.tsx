@@ -7,6 +7,7 @@ import SkillStack from "@/components/skillstack/skillstack";
 import Header from "@/components/global/header";
 import Hero from "@/components/hero/hero";
 import Contact from "@/components/contact/contact";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Talk />
         <Technologies />
         <Contact />
+        <Footer />
     </>
   );
 }
