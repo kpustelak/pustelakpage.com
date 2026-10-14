@@ -1,16 +1,17 @@
 "use client"
-import SectionTab from "@/components/global/section-tab";
+
 import {useEffect, useRef, useState} from "react";
+import SectionTab from "@/components/global/section-tab";
 import SkillSlider from "@/components/skillstack/skill-slider";
-import { skills } from "@/lib/skill-description";
-import SliderButtons from "@/components/skillstack/slider-buttons";
+import SliderButton from "@/components/skillstack/slider-buttons";
+import {skills} from "@/lib/skill-description";
 
 const maxSlide = skills.length - 3;
 
 export default function SkillStack(){
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const [selected, setSelected] = useState<number | null>(null)
-    const [step, setStep] = useState(0)
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [selected, setSelected] = useState<number | null>(null);
+    const [step, setStep] = useState(0);
 
     const track = useRef<HTMLDivElement>(null);
 
@@ -20,41 +21,38 @@ export default function SkillStack(){
         const observer = new ResizeObserver(() => setStep(card.offsetWidth + 16));
         observer.observe(card);
         return () => observer.disconnect();
-    }, [])
+    }, []);
 
-    function prev(){ setCurrentSlide(slide => slide === 0 ? 0 : slide - 1)}
-    function next(){setCurrentSlide(slide => slide === maxSlide ? slide : slide + 1)}
-    function handleSet(x : number | null){setSelected(x)}
+    function prev(){ setCurrentSlide(slide => Math.max(0, slide - 1)); }
+    function next(){ setCurrentSlide(slide => Math.min(maxSlide, slide + 1)); }
 
     return (
-        <div className="relative">
-            <div className="section-bleed py-(--space-section)">
+        <section className="overflow-x-clip">
+            <div className="section-container">
                 <SectionTab title={"Skill list"} fullWidth={true} >
                     <h2>Who actually am I</h2>
                     <SkillSlider
                         track={track}
                         step={step}
-                        handleSet={handleSet}
+                        handleSet={setSelected}
                         currentSlide={currentSlide}
                         selected={selected} />
-                    <div className="gap-x-2 flex">
-                        <SliderButtons
+                    <div className="flex gap-x-2">
+                        <SliderButton
                             currentSlide={currentSlide}
                             way="left"
                             maxSlide={maxSlide}
                             slide={prev}
-                            symbol="&lt;"
-                            key="&lt;" />
-                        <SliderButtons
+                            symbol="<" />
+                        <SliderButton
                             currentSlide={currentSlide}
                             way="right"
                             maxSlide={maxSlide}
                             slide={next}
-                            symbol="&gt;"
-                            key="&gt;" />
+                            symbol=">" />
                     </div>
                 </SectionTab>
             </div>
-        </div>
+        </section>
     )
 }
