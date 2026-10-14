@@ -14,7 +14,7 @@ export default function Contact(){
     const [message, setMessage] = useState("")
 
     return(
-        <div className="section-container">
+        <div id="contact" className="section-container">
             <SectionTab title="Contact" fullWidth={true}>
                 <h2>Lorem ipsum sit amet</h2>
                 <div className="flex gap-x-16">

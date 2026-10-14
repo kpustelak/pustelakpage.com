@@ -11,7 +11,7 @@ export default function About() {
             <div id="about" className="section-container">
                 <SectionTab title={"About"} fullWidth={false} >
                     <h2>{aboutDescription.title}</h2>
-                    <p className="w-3/4 text-lead"></p>
+                    <p className="w-3/4 text-lead">{aboutDescription.description}</p>
                     <SkillList names={aboutDescription.skillList} />
                     <div className="flex flex-col gap-y-10">
                         {aboutDescription.jobList.map((item, i) => (
