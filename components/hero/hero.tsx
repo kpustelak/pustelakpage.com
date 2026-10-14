@@ -3,12 +3,12 @@ import ocean from "@/public/wide-images/ocean.jpg";
 
 export default function Hero() {
     return(
-        <div id="home" className="relative h-screen overflow-hidden">
-            <Image src={ocean} alt="" fill className="object-cover" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-b from-transparent to-background" />
+        <section id="home" className="relative h-svh overflow-hidden">
+            <Image src={ocean} alt="" fill preload sizes="100vw" className="object-cover" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-b from-transparent to-background" />
             <div className="section-container relative z-20">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
             </div>
-        </div>
+        </section>
     )
 }

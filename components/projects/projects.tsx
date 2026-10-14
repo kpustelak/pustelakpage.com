@@ -1,14 +1,15 @@
 'use client'
 
-import mock from "@/public/high-images/1.jpg"
-import {useState} from "react"
+import {useRef, useState} from "react"
 import Image, {StaticImageData} from "next/image"
 import {projects} from "@/lib/project-list";
+import SectionTab from "@/components/global/section-tab";
+import first from "@/public/high-images/1.jpg"
 
 const projectList = projects
 export default function Projects() {
     const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
-    const [hoverImage, setHoverImage] = useState<StaticImageData>(mock);
+    const [hoverImage, setHoverImage] = useState<StaticImageData>(first);
 
     function followingImage(x: number, y: number, project: StaticImageData ) {
         setPos({x,y});

@@ -2,63 +2,44 @@
 
 import SectionTab from "@/components/global/section-tab";
 import FormInput from "@/components/contact/form-input";
-import {useState} from "react";
 import FormMessageBox from "@/components/contact/form-messagebox";
 import FormSelection from "@/components/contact/form-selection";
+import {contactDescription} from "@/lib/contact-description";
+
+const contactMock = contactDescription
 
 export default function Contact(){
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [companyName, setCompanyName] = useState("")
-    const [linkToOffer, setLinkToOffer] = useState("")
-    const [message, setMessage] = useState("")
 
     return(
-        <div id="contact" className="section-container">
+        <section id="contact" className="section-container">
             <SectionTab title="Contact" fullWidth={true}>
-                <h2>Lorem ipsum sit amet</h2>
-                <div className="flex gap-x-16">
-                    <div className="w-1/2 flex flex-col gap-y-8">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis facilisis augue quis imperdiet
-                            posuere. Fusce ut elit malesuada, ornare lorem non, lacinia mi. Etiam at urna ex. </p>
-                        <div className="flex flex-col gap-y-5">
-                            <p className="font-medium uppercase text-primary">Lorem ipsum dolor</p>
-                            <hr className="border-primary-20" />
-                            <p className="job-text overflow-hidden">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus neque sit amet
-                                aliquam consectetur. Nunc consectetur suscipit magna, commodo faucibus ante gravida non.
-                                Etiam cursus suscipit ante, id ultricies nulla condimentum sit amet. Suspendisse
-                                laoreet tortor nec sapien placerat, non faucibus tellus vulputate.
-                            </p>
-                        </div>
-                        <div className="flex flex-col gap-y-5">
-                            <p className="font-medium uppercase text-primary">Lorem ipsum dolor</p>
-                            <hr className="border-primary-20" />
-                            <p className="job-text overflow-hidden">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus neque sit amet
-                                aliquam consectetur. Nunc consectetur suscipit magna, commodo faucibus ante gravida non.
-                                Etiam cursus suscipit ante, id ultricies nulla condimentum sit amet. Suspendisse
-                                laoreet tortor nec sapien placerat, non faucibus tellus vulputate.
-                            </p>
-                        </div>
+                <h2>{contactMock.title}</h2>
+                <div className="flex flex-col gap-16 lg:flex-row">
+                    <div className="flex flex-col gap-y-8 lg:w-1/2">
+                        <p>{contactMock.description}</p>
+                        {contactMock.textDescription.map((item,i) => (
+                            <div className="flex flex-col gap-y-5" key={i}>
+                                <p className="font-medium uppercase text-primary">{item.title}</p>
+                                <hr className="border-primary-20" />
+                                <p>{item.description}</p>
+                            </div>
+                        ))}
                     </div>
-                    <div className="w-1/2">
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                            <FormInput fieldName="Name" fieldData={setName} placeholder="Name" />
-                            <FormInput fieldName="Email" fieldData={setEmail} placeholder="Email" />
-                            <FormInput fieldName="Company name" fieldData={setCompanyName} placeholder="Company name" />
-                            <FormInput fieldName="Link to offer" fieldData={setLinkToOffer} placeholder="Link to offer" />
+                    <form className="flex flex-col gap-y-6 lg:w-1/2">
+                        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <FormInput fieldName="Name" name="name" placeholder="Name" required autoComplete="name" />
+                            <FormInput fieldName="Email" name="email" type="email" placeholder="Email" required autoComplete="email" />
+                            <FormInput fieldName="Company name" name="company" placeholder="Company name" required autoComplete="organization" />
+                            <FormInput fieldName="Link to offer" name="offer" type="url" placeholder="https://" required />
                         </div>
-                        <FormSelection/>
-                        <div className="py-3">
-                            <FormMessageBox placeholder="Give me more info about information" fieldName="Message" fieldData={setMessage} />
-                        </div>
-                        <button type="submit" className="shrink-0 bg-primary px-6 py-3 my-3 text-background cursor-pointer">
+                        <FormSelection name="roles" />
+                        <FormMessageBox placeholder="Tell me more about the project" fieldName="Message" name="message" />
+                        <button type="submit" className="self-start bg-primary px-6 py-3 text-background cursor-pointer transition-opacity hover:opacity-80">
                             Send message →
                         </button>
-                    </div>
+                    </form>
                 </div>
             </SectionTab>
-        </div>
+        </section>
     )
 }

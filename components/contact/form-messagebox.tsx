@@ -1,20 +1,22 @@
+import {fieldClass} from "@/components/contact/form-input";
 
-interface formMessageBoxProps{
-    fieldName:string,
-    fieldData: (value:string) => void,
-    placeholder:string
+interface FormMessageBoxProps {
+    fieldName: string,
+    name: string,
+    placeholder: string,
+    required?: boolean
 }
 
-export default function FormMessageBox({fieldName, fieldData, placeholder}: formMessageBoxProps){
+export default function FormMessageBox({fieldName, name, placeholder, required = false}: FormMessageBoxProps){
     return (
-        <div>
-            <p className="text-primary">{fieldName}</p>
+        <label className="flex flex-col gap-y-2">
+            <span className="text-primary">{fieldName}{required && "*"}</span>
             <textarea
-                className="w-full h-40 border border-primary-20 bg-transparent px-4 py-3 text-primary
-                    outline-none placeholder:text-primary-40"
+                name={name}
+                required={required}
+                className={`${fieldClass} h-40 resize-y`}
                 placeholder={placeholder}
-                onChange={(event) => fieldData(event.target.value)}>
-            </textarea>
-        </div>
+            />
+        </label>
     )
 }

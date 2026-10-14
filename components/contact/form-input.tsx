@@ -1,20 +1,29 @@
+import {HTMLInputTypeAttribute} from "react";
 
-interface formInputProps{
-    fieldName:string,
-    fieldData: (value:string) => void,
-    placeholder:string
+interface FormInputProps {
+    fieldName: string,
+    name: string,
+    placeholder: string,
+    type?: HTMLInputTypeAttribute,
+    required?: boolean,
+    autoComplete?: string
 }
 
-export default function FormInput({fieldName, fieldData, placeholder}: formInputProps){
+export const fieldClass = "w-full border border-primary-20 bg-transparent px-4 py-3 text-primary transition-colors " +
+    "placeholder:text-primary-40 focus:border-primary focus-visible:outline-none"
+
+export default function FormInput({fieldName, name, placeholder, type = "text", required = false, autoComplete}: FormInputProps){
     return(
-        <div>
-            <p className="text-primary">{fieldName}*</p>
+        <label className="flex flex-col gap-y-2">
+            <span className="text-primary">{fieldName}{required && "*"}</span>
             <input
+                name={name}
+                type={type}
+                required={required}
+                autoComplete={autoComplete}
                 placeholder={placeholder}
-                className="w-full border border-primary-20 bg-transparent px-4 py-3 text-primary
-                outline-none placeholder:text-primary-40"
-                onChange={(event) => fieldData(event.target.value)}
+                className={fieldClass}
             />
-        </div>
+        </label>
     )
 }

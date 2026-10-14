@@ -6,7 +6,7 @@ interface SliderButtonProps {
     symbol: string;
 }
 
-export default function SliderButton({ slide, currentSlide, maxSlide, way, symbol }: SliderButtonProps) {
+export default function SliderButton({slide, currentSlide, maxSlide, way, symbol}: SliderButtonProps) {
     const isDisabled = way === "left" ? currentSlide === 0 : currentSlide === maxSlide;
 
     return (
@@ -14,9 +14,9 @@ export default function SliderButton({ slide, currentSlide, maxSlide, way, symbo
             type="button"
             onClick={slide}
             disabled={isDisabled}
-            className="bg-surface font-sans text-primary text-h3 py-1 px-10 disabled:opacity-40"
+            className="bg-surface px-10 py-1 font-sans text-h3 text-primary disabled:opacity-40"
         >
             {symbol}
         </button>
-    );
+    )
 }
