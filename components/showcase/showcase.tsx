@@ -3,6 +3,7 @@
 import first from "@/public/high-images/1.jpg"
 import second from "@/public/high-images/2.jpg"
 import third from "@/public/high-images/3.jpg"
+
 import Image from "next/image";
 import {useState} from "react";
 const items = [

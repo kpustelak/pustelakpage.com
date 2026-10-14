@@ -1,6 +1,6 @@
 'use client'
 
-import mock from "@/public/showcase/mock.jpg"
+import mock from "@/public/high-images/1.jpg"
 import {useState} from "react"
 import Image, {StaticImageData} from "next/image"
 import {projects} from "@/lib/project-list";
