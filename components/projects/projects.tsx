@@ -2,7 +2,9 @@
 
 import {useState} from "react"
 import Image, {StaticImageData} from "next/image"
+import Link from "next/link";
 import {projects} from "@/lib/project-list";
+import {projectHref} from "@/lib/project-description";
 import SectionTab from "@/components/global/section-tab";
 import first from "@/public/high-images/1.jpg"
 
@@ -31,9 +33,9 @@ export default function Projects() {
                     <h2>Project list</h2>
                     <ul className="border-t border-primary-20">
                         {projects.map((project, i) => (
-                            <li key={`${project.name}-${i}`} className="border-b border-primary-20">
-                                <a
-                                    href={project.link}
+                            <li key={project.slug} className="border-b border-primary-20">
+                                <Link
+                                    href={projectHref(project)}
                                     className="group relative isolate flex items-baseline justify-between gap-6 py-5 font-serif text-h2 leading-none uppercase text-primary
                                         transition-[padding,color] duration-300 hover:px-8 hover:text-background focus-visible:px-8 focus-visible:text-background focus-visible:outline-none md:py-6"
                                     onMouseMove={(e) => followingImage(e.clientX, e.clientY, project.image)}
@@ -46,7 +48,7 @@ export default function Projects() {
                                         <p>{i + 1}</p>
                                         <p>]</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
