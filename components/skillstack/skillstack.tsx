@@ -16,15 +16,16 @@ export default function SkillStack(){
     const touchStart = useRef<number | null>(null);
 
     useEffect(() => {
-        const card = track.current?.querySelector("article");
-        if (!card) return;
+        const trackElement = track.current;
+        const card = trackElement?.querySelector("article");
+        if (!trackElement || !card) return;
         const observer = new ResizeObserver(() => {
             const nextStep = card.offsetWidth + 16;
             setStep(nextStep);
-            setVisible(Math.max(1, Math.floor((track.current!.offsetWidth + 16) / nextStep)));
+            setVisible(Math.max(1, Math.floor((trackElement.offsetWidth + 16) / nextStep)));
         });
         observer.observe(card);
-        observer.observe(track.current!);
+        observer.observe(trackElement);
         return () => observer.disconnect();
     }, []);
 
