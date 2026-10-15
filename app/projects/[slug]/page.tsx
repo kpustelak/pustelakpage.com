@@ -8,6 +8,7 @@ import ProjectPageDescription from "@/components/projects/project-page-descripti
 import ProjectPageGridBlock from "@/components/projects/project-page-grid-block";
 import {getNextProject, getProject, projects} from "@/lib/project-list";
 import {projectHref} from "@/lib/project-description";
+import Footer from "@/components/footer/footer";
 
 export const dynamicParams = false;
 
@@ -57,7 +58,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
 
                 <Link
                     href={projectHref(nextProject)}
-                    className="group relative isolate mt-(--space-section) flex items-end justify-between gap-6 border-t border-primary-20 py-10 text-primary
+                    className="group relative isolate mt-(--space-section) flex items-end justify-between gap-6 border-t border-primary-20 pt-10 text-primary
                     transition-[padding,color] duration-300 hover:px-8 hover:text-background focus-visible:px-8 focus-visible:text-background focus-visible:outline-none md:py-16"
                 >
                     <span className="absolute inset-y-0 -inset-x-[100vw] -z-10 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
@@ -68,6 +69,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                     <span aria-hidden="true" className="font-serif text-h1 transition-transform duration-300 group-hover:translate-x-4">→</span>
                 </Link>
             </div>
+            <Footer />
         </article>
     )
 }
