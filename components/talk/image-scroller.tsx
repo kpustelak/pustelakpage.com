@@ -23,7 +23,7 @@ export default function ImageScroller({children, video}: {children: ReactNode; v
                 scrollTrigger: {
                     trigger: section.current,
                     start: "top top",
-                    end: "+=3000",
+                    end: () => window.innerWidth < 768 ? "+=1500" : "+=3000",
                     pin: true,
                     scrub: 1,
                     invalidateOnRefresh: true,
@@ -40,7 +40,7 @@ export default function ImageScroller({children, video}: {children: ReactNode; v
             });
 
             tl.to(frame.current, {
-                height: () => (window.innerWidth * 9) / 21,
+                height: () => window.innerWidth < 768 ? window.innerHeight * 0.7 : (window.innerWidth * 9) / 21,
                 duration: 1,
                 ease: "none",
             })

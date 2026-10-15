@@ -33,24 +33,24 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         <article className="overflow-x-clip">
             <div className="section-container">
                 <Link href="/#projects">Back to projects</Link>
-                <h1 className="uppercase my-12 text-9xl">{project.name}</h1>
+                <h1 className="my-12 text-h1 uppercase lg:text-9xl">{project.name}</h1>
                 <hr className="text-primary/20"/>
-                <div className="flex w-full py-5">
+                <div className="grid w-full grid-cols-2 gap-6 py-5 md:flex md:gap-0">
                     {project.details.map(detail => (
                         <ProjectPageDescription key={detail.title} title={detail.title} description={detail.description} />
                     ))}
                 </div>
-                <Image src={project.heroImage} alt={project.name} loading="eager" className="w-full h-screen object-cover py-(--space-section)" />
+                <Image src={project.heroImage} alt={project.name} loading="eager" className="h-svh w-full object-cover py-(--space-section)" />
                 <SectionTab title="Info" fullWidth={true}   >
                     <h2>{project.info.title}</h2>
                     <p className="text-lead md:w-3/4">{project.info.description}</p>
                     <SkillList names={project.info.technologies} />
                 </SectionTab>
-                <div className="flex w-full py-(--space-section) gap-x-8">
-                    <Image src={project.gallery[0]} alt="" className="w-1/2 pt-30" />
-                    <Image src={project.gallery[1]} alt="" className="w-1/2 pb-30" />
+                <div className="flex w-full flex-col gap-8 py-(--space-section) md:flex-row">
+                    <Image src={project.gallery[0]} alt="" className="w-full md:w-1/2 md:pt-30" />
+                    <Image src={project.gallery[1]} alt="" className="w-full md:w-1/2 md:pb-30" />
                 </div>
-                <div className="w-full grid grid-cols-2 gap-30">
+                <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-30">
                     {project.highlights.map((highlight, i) => (
                         <ProjectPageGridBlock key={i} index={i + 1} title={highlight.title} description={highlight.description} />
                     ))}

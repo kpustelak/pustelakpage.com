@@ -1,5 +1,5 @@
 export default function Divider(){
     return (
-        <div className="mx-20 w-px bg-black" />
+        <div className="mx-20 hidden w-px bg-black md:block" />
     )
 }

@@ -21,10 +21,10 @@ export default function SkillSlider({track, step, handleSet, currentSlide, selec
                     <article
                         onClick={() => handleSet(i)}
                         style={{transform: `translateX(-${currentSlide * step}px)`, transition: "transform 300ms ease"}}
-                        className="relative isolate aspect-3/4 w-3/10 shrink-0 cursor-pointer"
+                        className="relative isolate aspect-3/4 w-3/4 shrink-0 cursor-pointer sm:w-[45%] md:w-3/10"
                     >
                         <Image src={skill.image} alt="" fill className="bg-white object-cover duration-300 hover:p-10" />
-                        <h3 className="absolute inset-x-0 bottom-15 text-center text-7xl text-black">{skill.title}</h3>
+                        <h3 className="absolute inset-x-0 bottom-8 text-center text-5xl text-black md:bottom-15 md:text-7xl">{skill.title}</h3>
                     </article>
                     <SkillDescription
                         title={skill.title}

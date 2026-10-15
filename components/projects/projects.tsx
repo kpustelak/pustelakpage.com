@@ -38,12 +38,14 @@ export default function Projects() {
                                     href={projectHref(project)}
                                     className="group relative isolate flex items-baseline justify-between gap-6 py-5 font-serif text-h2 leading-none uppercase text-primary
                                         transition-[padding,color] duration-300 hover:px-8 hover:text-background focus-visible:px-8 focus-visible:text-background focus-visible:outline-none md:py-6"
-                                    onMouseMove={(e) => followingImage(e.clientX, e.clientY, project.image)}
-                                    onMouseLeave={() => setPos(null)}
+                                    onPointerMove={(e) => {
+                                        if (e.pointerType === "mouse") followingImage(e.clientX, e.clientY, project.image);
+                                    }}
+                                    onPointerLeave={() => setPos(null)}
                                 >
                                     <span className="absolute inset-y-0 -inset-x-[100vw] -z-10 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
                                     <span>{project.name}</span>
-                                    <div className="flex justify-between w-1/20">
+                                    <div className="flex shrink-0 gap-2 md:w-1/20 md:justify-between md:gap-0">
                                         <p>[</p>
                                         <p>{i + 1}</p>
                                         <p>]</p>
