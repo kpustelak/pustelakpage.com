@@ -11,23 +11,16 @@ export type ContactDescription = {
 }
 
 export const contactDescription : ContactDescription = {
-    title : "Lorem ipsum sit amet",
-    description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis facilisis augue quis imperdiet posuere." +
-        "Fusce ut elit malesuada, ornare lorem non, lacinia mi. Etiam at urna ex.",
+    title : "Get in touch",
+    description : "If you have made it this far, I'm curious what you think about this portfolio. Even if you are not looking to hire, I'm always happy to hear your opinion about this page and my projects.",
     textDescription : [
         {
-            title : "Lorem ipsum dolor",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus neque sit amet " +
-                "aliquam consectetur. Nunc consectetur suscipit magna, commodo faucibus ante gravida non. Etiam cursus " +
-                "suscipit ante, id ultricies nulla condimentum sit amet. Suspendisse laoreet tortor nec sapien placerat," +
-                "non faucibus tellus vulputate."
+            title : "But what are you looking for?",
+            description : "I'm looking for a job or an internship that can lead to employment. Building portfolio projects over and over gets repetitive, and I want the opportunity to put my skills to work in a real job."
         },
         {
-            title : "Lorem ipsum dolor",
-            description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus neque sit amet " +
-                "aliquam consectetur. Nunc consectetur suscipit magna, commodo faucibus ante gravida non. Etiam cursus " +
-                "suscipit ante, id ultricies nulla condimentum sit amet. Suspendisse laoreet tortor nec sapien placerat," +
-                "non faucibus tellus vulputate."
+            title : "Where can you reach me?",
+            description : "Through this contact form, my LinkedIn account, or just send me an email. I check my inbox daily, so I won't miss your message!"
         }
 
         ]

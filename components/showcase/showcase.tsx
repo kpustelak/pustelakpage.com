@@ -7,9 +7,9 @@ import third from "@/public/high-images/3.jpg"
 import Image from "next/image";
 import {useState} from "react";
 const items = [
-    { src: first, alt: "Project 1", description: "Lorem ipsum" },
-    { src: second, alt: "Project 2", description: "Lorem ipsum" },
-    { src: third, alt: "Project 3", description: "Lorem ipsum" }
+    { src: first, alt: "Project 1", description: "Plan the project" },
+    { src: second, alt: "Project 2", description: "Fight the bugs" },
+    { src: third, alt: "Project 3", description: "Conquer the results" }
 ];
 
 

@@ -17,7 +17,7 @@ export default function Technologies(){
     return (
         <section className="section-container">
             <SectionTab title={"Technologies"} fullWidth={true} >
-                <h2>Lorem ipsum sit amet</h2>
+                <h2>Technologies I work with</h2>
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
                     {technologies.map((item, i) => (
                         <GridSquare key={i} image={item.image} altText={item.altText} />
