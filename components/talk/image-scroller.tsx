@@ -7,35 +7,23 @@ import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
-export default function ImageScroller({children, video}: {children: ReactNode; video: string}) {
+export default function ImageScroller({children, overlay}: {children: ReactNode; overlay: ReactNode}) {
     const section = useRef<HTMLElement>(null);
     const frame = useRef<HTMLDivElement>(null);
-    const clip = useRef<HTMLVideoElement>(null);
+    const layer = useRef<HTMLDivElement>(null);
     const image = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        const v = clip.current;
-        if (!v) return;
-
         const mm = gsap.matchMedia();
         mm.add("(prefers-reduced-motion: no-preference)", () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section.current,
                     start: "top top",
-                    end: () => window.innerWidth < 768 ? "+=1500" : "+=3000",
+                    end: () => window.innerWidth < 768 ? "+=1800" : "+=3600",
                     pin: true,
                     scrub: 1,
                     invalidateOnRefresh: true,
-                    onUpdate: () => {
-                        const inVideoPhase = tl.time() >= (tl.labels.video ?? 0);
-                        if (inVideoPhase && v.paused) {
-                            v.play().catch(() => {});
-                        } else if (!inVideoPhase && !v.paused) {
-                            v.pause();
-                            v.currentTime = 0;
-                        }
-                    },
                 },
             });
 
@@ -45,8 +33,13 @@ export default function ImageScroller({children, video}: {children: ReactNode; v
                 ease: "none",
             })
                 .to(image.current, {scale: 1.15, duration: 1, ease: "none"})
-                .addLabel("video")
-                .to(v, {opacity: 1, duration: 0.3, ease: "none"}, "video")
+                .addLabel("overlay")
+                .to(layer.current, {opacity: 1, duration: 0.3, ease: "none"}, "overlay")
+                .set(layer.current, {pointerEvents: "auto"}, "overlay")
+                .to({}, {duration: 0.8})
+                .fromTo(".overlay-item",
+                    {yPercent: (i: number) => i % 2 === 0 ? -130 : 130},
+                    {yPercent: 0, duration: 0.6, stagger: 0.3, ease: "power2.out"})
                 .to({}, {duration: 1});
         });
     }, {scope: section});
@@ -57,15 +50,9 @@ export default function ImageScroller({children, video}: {children: ReactNode; v
                 <div ref={image} className="absolute inset-0 will-change-transform">
                     {children}
                 </div>
-                <video
-                    ref={clip}
-                    src={video}
-                    muted
-                    loop
-                    playsInline
-                    preload="none"
-                    className="absolute inset-0 h-full w-full object-cover opacity-0"
-                />
+                <div ref={layer} className="pointer-events-none absolute inset-0 opacity-0">
+                    {overlay}
+                </div>
             </div>
         </section>
     )

@@ -1,16 +1,23 @@
 import SectionTab from "@/components/global/section-tab";
 import GridSquare from "@/components/technologies/grid-square";
-import Github from "@/public/GitHub_Lockup_White.svg";
+import dotnet from "@/public/technologies/dotnet.svg";
+import csharp from "@/public/technologies/csharp.svg";
+import react from "@/public/technologies/react.svg";
+import tailwind from "@/public/technologies/tailwindcss.svg";
+import postgresql from "@/public/technologies/postgresql.svg";
+import redis from "@/public/technologies/redis.svg";
+import wordpress from "@/public/technologies/wordpress.svg";
+import figma from "@/public/technologies/figma.svg";
 
 const technologies = [
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
-    { image: Github, altText: "GitHub" },
+    { image: dotnet, altText: ".NET" },
+    { image: csharp, altText: "C#" },
+    { image: react, altText: "React" },
+    { image: tailwind, altText: "Tailwind CSS" },
+    { image: postgresql, altText: "PostgreSQL" },
+    { image: redis, altText: "Redis" },
+    { image: wordpress, altText: "WordPress" },
+    { image: figma, altText: "Figma" },
 ];
 
 export default function Technologies(){

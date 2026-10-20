@@ -3,6 +3,7 @@ import {StaticImageData} from "next/image";
 export type ProjectDetail = {
     title: string,
     description: string,
+    href?: string,
 }
 
 export type ProjectHighlight = {

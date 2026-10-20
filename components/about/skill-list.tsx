@@ -6,8 +6,8 @@ export default function SkillList({ names }: SkillListProps) {
         <ul className="flex flex-wrap gap-x-5 gap-y-3 font-medium uppercase text-primary">
             {names.map((name, index) => (
                 <li key={`${name}-${index}`} className="flex items-center gap-x-5 whitespace-nowrap">
-                    {index > 0 && <span aria-hidden="true">·</span>}
                     {name}
+                    {index < names.length - 1 && <span aria-hidden="true">·</span>}
                 </li>
             ))}
         </ul>

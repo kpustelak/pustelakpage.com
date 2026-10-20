@@ -14,15 +14,16 @@ export default function PinReveal({children}: {children: ReactNode}) {
         const mm = gsap.matchMedia();
         mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
             gsap.from(".job-text", {
-                height: 0,
+                clipPath: "inset(0 0 100% 0)",
                 duration: 1,
                 stagger: 1,
                 scrollTrigger:{
                     trigger: ref.current,
-                    start: "top top",
+                    start: () => ref.current!.offsetHeight > window.innerHeight ? "bottom bottom" : "top top",
                     end: "+=1500",
                     pin: true,
-                    scrub: true
+                    scrub: true,
+                    invalidateOnRefresh: true
                 },
             });
         });

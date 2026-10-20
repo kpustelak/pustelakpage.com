@@ -14,6 +14,7 @@ export default function SliderButton({slide, currentSlide, maxSlide, way, symbol
             type="button"
             onClick={slide}
             disabled={isDisabled}
+            {...{autoComplete: "off"}}
             className="bg-surface px-10 py-1 font-sans text-h3 text-primary disabled:opacity-40"
         >
             {symbol}

@@ -37,10 +37,10 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
                 <hr className="text-primary/20"/>
                 <div className="grid w-full grid-cols-2 gap-6 py-5 md:flex md:gap-0">
                     {project.details.map(detail => (
-                        <ProjectPageDescription key={detail.title} title={detail.title} description={detail.description} />
+                        <ProjectPageDescription key={detail.title} title={detail.title} description={detail.description} href={detail.href} />
                     ))}
                 </div>
-                <Image src={project.heroImage} alt={project.name} loading="eager" className="h-svh w-full object-cover py-(--space-section)" />
+                <Image src={project.heroImage} alt={project.name} loading="eager" className="h-auto w-full object-cover py-(--space-section) md:h-svh" />
                 <SectionTab title="Info" fullWidth={true}   >
                     <h2>{project.info.title}</h2>
                     <p className="text-lead md:w-3/4">{project.info.description}</p>
